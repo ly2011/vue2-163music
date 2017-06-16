@@ -79,3 +79,9 @@ color);
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* 透明度 */
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}

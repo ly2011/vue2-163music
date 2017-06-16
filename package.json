@@ -138,6 +138,7 @@
     "redux-persist": "^4.8.0",
     "vue": "^2.3.4",
     "vue-router": "^2.5.3",
-    "vuex": "^2.3.1"
+    "vuex": "^2.3.1",
+    "vuex-router-sync": "^4.2.0"
   }
 }
