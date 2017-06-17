@@ -69,7 +69,7 @@ color);
 
 /* px 转 rem */
 @function torem($px) {//$px为需要转换的字号
-    @return $px / 20px * 1rem; //20px为根字体大小
+    @return $px / 100px * 1rem; //100px为根字体大小
 }
 
 /* 不换行 */

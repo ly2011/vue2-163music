@@ -128,5 +128,5 @@ $colors: (white: ($white, $black), black: ($black, $white), light: ($light, $lig
 
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 !default;
 
-$header_height:.5rem;
-$footer_height:.6rem;
+$header-height: 100px;
+$footer-height: 120px;
