@@ -71,6 +71,7 @@ nav.parent-nav{
   flex: 1;
   & > i {
     font-size: torem(32px);
+    color: #fff;
   }
 }
 .nav-right {

@@ -1,43 +1,38 @@
 <template>
-  <section>
+  <div>
     <ul class="menu_list">
-      <li class="menu_item"><a href="javascript:;">
-          <dl>
-            <dt class="pic"><i></i></dt>
-            <dd class="title"></dd>
-            <span></span>
-          </dl>
-        </a></li>
-      <li class="menu_item"><a href="javascript:;">
-          <dl>
-            <dt class="pic"><i></i></dt>
-            <dd class="title"></dd>
-            <span></span>
-          </dl>
-        </a></li>
-      <li class="menu_item"><a href="javascript:;">
-          <dl>
-            <dt class="pic"><i></i></dt>
-            <dd class="title"></dd>
-            <span></span>
-          </dl>
-        </a></li>
-      <li class="menu_item"><a href="javascript:;">
-          <dl>
-            <dt class="pic"><i></i></dt>
-            <dd class="title"></dd>
-            <span></span>
-          </dl>
-        </a></li>
-      <li class="menu_item"><a href="javascript:;">
-          <dl>
-            <dt class="pic"><i></i></dt>
-            <dd class="title"></dd>
-            <span></span>
-          </dl>
-        </a></li>
+      <li class="menu_item">
+        <a href="javascript:;">
+          <i class="iconfont icon-yinle"></i>
+          <span class="title">本地音乐</span>
+        </a>
+      </li>
+      <li class="menu_item">
+        <a href="javascript:;">
+          <i class="iconfont icon-zuijinbofang"></i>
+          <span class="title">最近播放</span>
+        </a>
+      </li>
+      <li class="menu_item">
+        <a href="javascript:;">
+          <i class="iconfont icon-xiazai"></i>
+          <span class="title">下载管理</span>
+        </a>
+      </li>
+      <li class="menu_item">
+        <a href="javascript:;">
+          <i class="iconfont icon-diantai"></i>
+          <span class="title">我的电台</span>
+        </a>
+      </li>
+      <li class="menu_item">
+        <a href="javascript:;">
+          <i class="iconfont icon-shoucang"></i>
+          <span class="title">我的收藏</span>
+        </a>
+      </li>
     </ul>
-  </section>
+  </div>
 </template>
 <script>
 export default {
@@ -48,16 +43,48 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '../assets/scss/variables.scss';
-@import '../assets/scss/mixin.scss';
-$menu-item-height: 100px;
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixin.scss';
+$menu-item-height: 60px;
 .menu_list {
   .menu_item {
-    display: flex;
-    height: torem($menu-item-height);
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
 
+    & a {
+      position: relative;
+      display: flex;
+      height: torem($menu-item-height);
+      justify-content: space-between;
+      align-items: center;
+      padding: torem(20px) torem(30px);
+      &:before,&:after {
+        content: " ";
+        position: absolute;
+        left: torem(30px);
+        right: 0;
+        height: 1px;
+        color: #e5e5e5;
+        z-index: 2;
+        top: 0;
+        border-top: 1px solid #e5e5e5;
+        transform-origin: 0 0;
+        transform: scaleY(.5);
+      }
+      & i {
+        vertical-align: top;
+        box-sizing: content-box;
+        width: torem(50px);
+        padding-right: torem(20px);
+        font-size: torem(40px);
+        color: $red;
+      }
+      & .title {
+        flex: 1 1 auto;
+        font-size: torem(34px);
+        color: #333;
+        @include ell;
+      }
+    }
   }
 }
 </style>
