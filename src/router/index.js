@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import Index from '../views/index';
 import Login from '../views/login';
 import My from '../views/index/my';
+import songList from '../views/index/discover/songList';
 
 Vue.use(Router);
 
@@ -25,6 +26,12 @@ const router = new Router({
           path: 'my',
           name: 'my',
           component: My
+        },
+        {
+          path: 'discover',
+          name: 'discover',
+          component: songList,
+          children: []
         }
       ]
     },

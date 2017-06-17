@@ -37,7 +37,7 @@
 <script>
 export default {
   name: 'my',
-  data () {
+  data() {
     return {}
   }
 }
@@ -57,18 +57,17 @@ $menu-item-height: 60px;
       justify-content: space-between;
       align-items: center;
       padding: torem(20px) torem(30px);
-      &:before,&:after {
-        content: " ";
+      &:before {
+        content: "";
         position: absolute;
         left: torem(30px);
+        top: 0;
         right: 0;
         height: 1px;
-        color: #e5e5e5;
         z-index: 2;
-        top: 0;
-        border-top: 1px solid #e5e5e5;
         transform-origin: 0 0;
         transform: scaleY(.5);
+        background-color: #e5e5e5;
       }
       & i {
         vertical-align: top;

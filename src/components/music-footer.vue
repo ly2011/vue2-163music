@@ -1,5 +1,5 @@
 <template>
-  <footer class="tabbar">
+  <footer class="tabbar" :show="isShow" style="display: none;">
     <div class="pic">
       <img src="" alt="">
     </div>
@@ -18,7 +18,7 @@ export default {
   name: 'music-footer',
   data() {
     return {
-
+      isShow: false
     }
   }
 }
