@@ -5,19 +5,22 @@ const baseConfig = require('./webpack.base');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
+// const DashboardPlugin = require('webpack-dashboard/plugin');
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 // const OfflinePlugin = require('offline-plugin');
+function resolve(dir = '.') {
+  return path.join(__dirname, '..', dir);
+}
 /**
  * 目录/路径
  */
-const srcPath = path.join(__dirname, '../src');
+const srcPath = resolve('src');
 // const buildPath = path.resolve(__dirname, '../dist')
-const faviconPath = path.resolve(__dirname, srcPath, 'assets/favicon.ico');
+const faviconPath = resolve('src/assets/favicon.ico');
 
 const developmentConf = merge(baseConfig, {
   entry: {
-    index: path.resolve(__dirname, '../src/index.js'),
+    index: resolve('src/index.js'),
     vendor: [
       // 'vue', 'vue-router', 'vuex', 'vuex-router-sync', 'babel-polyfill'
     ]
@@ -25,15 +28,15 @@ const developmentConf = merge(baseConfig, {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new FriendlyErrorsWebpackPlugin(),
-    new DashboardPlugin(),
+    // new DashboardPlugin(),
     // new OfflinePlugin({   externals: ['index.html'],   AppCache: false, }), //
     // pwa
     new HtmlWebpackPlugin({
       // 根据模板插入css/js等生成最终HTML
-      title: 'react-weather',
+      title: 'vue2-163music',
       favicon: faviconPath, // favicon路径
       filename: 'index.html',
-      template: path.resolve(__dirname, '../src/index.html'),
+      template: resolve('src/index.html'),
       hash: true,
       // excludeChunks: 'appcache/manifest.appcache',
       inject: true,
@@ -64,7 +67,7 @@ const developmentConf = merge(baseConfig, {
   ],
   devtool: 'cheap-module-eval-source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, '../src'),
+    contentBase: srcPath,
     watchContentBase: true, // 文件更改将触发整个页面重新加载。
     inline: true, // 实时刷新
     hot: true,

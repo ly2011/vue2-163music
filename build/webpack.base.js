@@ -6,11 +6,15 @@ const customProperties = require('postcss-custom-properties');
 const pxtorem = require('postcss-pxtorem');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const rootPath = path.resolve(__dirname, '../');
-const srcPath = path.join(__dirname, '../src');
-const faviconPath = path.resolve(__dirname, srcPath, 'assets/favicon.ico');
-const buildPath = path.resolve(__dirname, '../dist');
-const nodeModulesPath = path.resolve(__dirname, '../node_modules');
+function resolve(dir = '.') {
+  return path.join(__dirname, '..', dir);
+}
+
+const rootPath = resolve('.');
+const srcPath = resolve('src');
+const faviconPath = resolve('src/assets/favicon.ico');
+const buildPath = resolve('dist');
+const nodeModulesPath = resolve('node_modules');
 
 module.exports = {
   context: rootPath,
@@ -23,9 +27,7 @@ module.exports = {
     chunkFilename: 'js/[name]__[hash:16].bundle.js'
   },
   resolve: {
-    modules: [
-      'node_modules', nodeModulesPath
-    ],
+    modules: ['node_modules', nodeModulesPath],
     enforceExtension: false,
     enforceModuleExtension: false,
     extensions: [
@@ -44,22 +46,22 @@ module.exports = {
       '.tsx'
     ],
     alias: {
-      SRC: path.resolve(__dirname, '../src'),
-      ASSETS: path.resolve(__dirname, '../src/assets'),
-      COMPONENTS: path.resolve(__dirname, '../src/components'),
-      ACTIONS: path.resolve(__dirname, '../src/actions'),
-      CONSTANTS: path.resolve(__dirname, '../src/constants'),
-      CONTAINERS: path.resolve(__dirname, '../src/containers'),
-      MIDDLEWARE: path.resolve(__dirname, '../src/middleware'),
-      REDUCERS: path.resolve(__dirname, '../src/reducers'),
-      STORE: path.resolve(__dirname, '../src/store'),
-      ROUTES: path.resolve(__dirname, '../src/routes')
+      '@': resolve('src'),
+      SRC: resolve('src'),
+      ASSETS: resolve('src/assets'),
+      COMPONENTS: resolve('src/components'),
+      ACTIONS: resolve('src/actions'),
+      CONSTANTS: resolve('src/constants'),
+      CONTAINERS: resolve('src/containers'),
+      MIDDLEWARE: resolve('src/middleware'),
+      REDUCERS: resolve('src/reducers'),
+      STORE: resolve('src/store'),
+      ROUTES: resolve('src/routes'),
+      VIEWS: resolve('src/views')
     }
   },
   resolveLoader: {
-    modules: [
-      'node_modules', nodeModulesPath
-    ],
+    modules: ['node_modules', nodeModulesPath]
     // moduleExtensions: ['-loader']
   },
   module: {
@@ -76,16 +78,19 @@ module.exports = {
             }
           }
         ]
-      }, {
+      },
+      {
         enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'source-map-loader'
-      }, {
+      },
+      {
         test: /\.vue$/,
         exclude: /node_modules/,
         use: ['vue-loader']
-      }, {
+      },
+      {
         test: /\.css$/,
         // include: srcPath,
         exclude: /(node_modules|\.global\.css)/,
@@ -101,23 +106,26 @@ module.exports = {
                 camelCase: true,
                 localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
               }
-            }, {
+            },
+            {
               loader: 'typed-css-modules-loader',
               options: {
                 camelCase: true
               }
-            }, {
+            },
+            {
               loader: 'postcss-loader',
               options: {
                 importLoaders: 1
               }
             }
-          ],
+          ]
           // loader:
           // 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]__
           // _ [hash:base64:5]!postcss-loader',
         })
-      }, {
+      },
+      {
         test: /\.global.css$/,
         exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
@@ -128,23 +136,26 @@ module.exports = {
               options: {
                 localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
               }
-            }, {
+            },
+            {
               loader: 'typed-css-modules-loader',
               options: {
                 camelCase: true
               }
-            }, {
+            },
+            {
               loader: 'postcss-loader',
               options: {
                 importLoaders: 1
               }
             }
-          ],
+          ]
           // loader:
           // 'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]__
           // _ [hash:base64:5]!postcss-loader',
         })
-      }, {
+      },
+      {
         test: /\.(scss|sass)$/,
         include: srcPath,
         use: ExtractTextPlugin.extract({
@@ -159,26 +170,31 @@ module.exports = {
                 camelCase: true,
                 localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
               }
-            }, {
+            },
+            {
               loader: 'typed-css-modules-loader',
               options: {
                 camelCase: true
               }
-            }, {
+            },
+            {
               loader: 'postcss-loader',
               options: {
                 importLoaders: 1
               }
-            }, {
+            },
+            {
               loader: 'sass-loader'
             }
           ]
         })
-      }, {
+      },
+      {
         test: /\.(scss|sass)$/,
         include: nodeModulesPath,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
-      }, {
+      },
+      {
         test: /\.less$/,
         include: srcPath,
         use: ExtractTextPlugin.extract({
@@ -193,38 +209,46 @@ module.exports = {
                 camelCase: true,
                 localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
               }
-            }, {
+            },
+            {
               loader: 'typed-css-modules-loader',
               options: {
                 camelCase: true
               }
-            }, {
+            },
+            {
               loader: 'postcss-loader',
               options: {
                 importLoaders: 1
               }
-            }, {
+            },
+            {
               loader: 'less-loader'
             }
           ]
         })
-      }, {
+      },
+      {
         test: /\.less$/,
         include: [nodeModulesPath],
         use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
-      }, {
+      },
+      {
         test: /\.(js|jsx)$/,
         use: ['babel-loader'],
         exclude: /node_modules/
-      }, {
+      },
+      {
         test: /\.tsx?$/,
         use: ['awesome-typescript-loader'],
         exclude: /node_modules/
-      }, {
+      },
+      {
         test: /\.html$/,
         use: ['vue-html-loader'],
         exclude: /node_modules/
-      }, {
+      },
+      {
         test: /\.(png|jpg|gif)$/,
         include: srcPath,
         exclude: nodeModulesPath,
@@ -243,9 +267,7 @@ module.exports = {
       // font-awesome
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        include: [
-          srcPath, nodeModulesPath
-        ],
+        include: [srcPath, nodeModulesPath],
         use: [
           {
             loader: 'url-loader',
@@ -256,11 +278,10 @@ module.exports = {
             }
           }
         ]
-      }, {
+      },
+      {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        include: [
-          srcPath, nodeModulesPath
-        ],
+        include: [srcPath, nodeModulesPath],
         use: [
           {
             loader: 'file-loader',
@@ -280,8 +301,8 @@ module.exports = {
         postcss() {
           return [
             cls(),
-            cssnext({flexbox: true, browsers: ['last 10 versions']}),
-            customProperties(),
+            cssnext({ flexbox: true, browsers: ['last 10 versions'] }),
+            customProperties()
             // pxtorem({rootValue: 100, propWhiteList: []})
           ];
         }
@@ -296,32 +317,29 @@ module.exports = {
           postcss() {
             return [
               customMedia(),
-              cssnext({flexbox: true, browsers: ['last 10 versions']}),
-              customProperties(),
+              cssnext({ flexbox: true, browsers: ['last 10 versions'] }),
+              customProperties()
               // pxtorem({rootValue: 100, propWhiteList: []})
             ];
           },
           css: ExtractTextPlugin.extract({
-            use: [
-              'css-loader', 'postcss-loader'
-            ],
+            use: ['css-loader', 'postcss-loader'],
             fallback: 'vue-style-loader'
           }),
           scss: ExtractTextPlugin.extract({
-            use: [
-              'css-loader', 'postcss-loader', 'sass-loader'
-            ],
+            use: ['css-loader', 'postcss-loader', 'sass-loader'],
             fallback: 'vue-style-loader'
           }),
           sass: ExtractTextPlugin.extract({
-            use: [
-              'css-loader', 'postcss-loader', 'sass-loader'
-            ],
+            use: ['css-loader', 'postcss-loader', 'sass-loader'],
             fallback: 'vue-style-loader'
           })
         }
       }
     }),
-    new ExtractTextPlugin({filename: 'css/[name].[hash].css', allChunks: true})
+    new ExtractTextPlugin({
+      filename: 'css/[name].[hash].css',
+      allChunks: true
+    })
   ]
 };
