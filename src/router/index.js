@@ -5,6 +5,8 @@ import Index from '../views/index';
 import Login from '../views/login';
 import My from '../views/index/my';
 import songList from '../views/index/discover/songList';
+import Recommend from '../views/index/discover/recommend';
+import Discover from '../views/index/discover';
 
 Vue.use(Router);
 
@@ -29,9 +31,24 @@ const router = new Router({
         },
         {
           path: 'discover',
+          redirect: '/index/discover/songList'
+        },
+        {
+          path: 'discover',
           name: 'discover',
-          component: songList,
-          children: []
+          component: Discover,
+          children: [
+            {
+              path: 'songList',
+              name: 'songList',
+              component: songList
+            },
+            {
+              path: 'recommend',
+              name: 'recommend',
+              component: Recommend
+            }
+          ]
         }
       ]
     },

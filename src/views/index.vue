@@ -12,8 +12,8 @@
   </div>
 </template>
 <script>
-import musicHeader from '../components/music-header'
-import musicFooter from '../components/music-footer'
+import musicHeader from 'SRC/components/music-header'
+import musicFooter from 'SRC/components/music-footer'
 export default {
   name: 'index',
   data() {

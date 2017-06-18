@@ -1,11 +1,11 @@
 <template>
-  <div class="parent-container">
+  <div>
     <header class="second-nav">
       <ul class="navbar">
-        <li class="nav-item" :class="{'active': $route.name == 'recommend'}" @click="$router.replace({name:'recommend'})">
+        <li class="nav-item active">
           <a href="javascript:;">个性推荐</a>
         </li>
-        <li class="nav-item" :class="{'active': $route.name == 'songList'}" @click="$router.replace({name:'songList'})">
+        <li class="nav-item">
           <a href="javascript:;">歌单</a>
         </li>
         <li class="nav-item">
@@ -16,18 +16,13 @@
         </li>
       </ul>
     </header>
-    <transition>
-      <router-view></router-view>
-    </transition>
   </div>
 </template>
 <script>
 export default {
-  name: 'discover',
+  name: 'songList',
   data() {
     return {}
-  },
-  methods: {
   }
 }
 </script>
