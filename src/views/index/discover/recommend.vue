@@ -7,7 +7,7 @@
           <li class="remd_li">
             <a href="javascript:;">
               <div class="remd_logo">
-                <img src="" alt="">
+                <img class="u-img" src="http://p1.music.126.net/C4uGeK34zEF9Zf7vnFY-tQ==/109951162947883361.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="163music">
                 <span class="remd_lnum">2535万</span>
               </div>
               <p class="remd_text">麻麻，我想跟他们合唱！| 我想和你唱特辑</p>
@@ -16,7 +16,7 @@
           <li class="remd_li">
             <a href="javascript:;">
               <div class="remd_logo">
-                <img src="" alt="">
+                <img class="u-img" src="http://p1.music.126.net/C4uGeK34zEF9Zf7vnFY-tQ==/109951162947883361.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="163music">
                 <span class="remd_lnum">2535万</span>
               </div>
               <p class="remd_text">麻麻，我想跟他们合唱！| 我想和你唱特辑</p>
@@ -25,7 +25,7 @@
           <li class="remd_li">
             <a href="javascript:;">
               <div class="remd_logo">
-                <img src="" alt="">
+                <img class="u-img" src="http://p1.music.126.net/C4uGeK34zEF9Zf7vnFY-tQ==/109951162947883361.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="163music">
                 <span class="remd_lnum">2535万</span>
               </div>
               <p class="remd_text">麻麻，我想跟他们合唱！| 我想和你唱特辑</p>
@@ -34,31 +34,49 @@
           <li class="remd_li">
             <a href="javascript:;">
               <div class="remd_logo">
-                <img src="" alt="">
+                <img class="u-img" src="http://p1.music.126.net/C4uGeK34zEF9Zf7vnFY-tQ==/109951162947883361.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="163music">
+                <span class="remd_lnum">2535万</span>
+              </div>
+              <p class="remd_text">麻麻，我想跟他们合唱！| 我想和你唱特辑</p>
+            </a>
+          </li>
+          <li class="remd_li">
+            <a href="javascript:;">
+              <div class="remd_logo">
+                <img class="u-img" src="http://p1.music.126.net/C4uGeK34zEF9Zf7vnFY-tQ==/109951162947883361.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="163music">
+                <span class="remd_lnum">2535万</span>
+              </div>
+              <p class="remd_text">麻麻，我想跟他们合唱！| 我想和你唱特辑</p>
+            </a>
+          </li>
+          <li class="remd_li">
+            <a href="javascript:;">
+              <div class="remd_logo">
+                <img class="u-img" src="http://p1.music.126.net/C4uGeK34zEF9Zf7vnFY-tQ==/109951162947883361.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="163music">
+                <span class="remd_lnum">2535万</span>
+              </div>
+              <p class="remd_text">麻麻，我想跟他们合唱！| 我想和你唱特辑</p>
+            </a>
+          </li>
+          <li class="remd_li">
+            <a href="javascript:;">
+              <div class="remd_logo">
+                <img class="u-img" src="http://p1.music.126.net/C4uGeK34zEF9Zf7vnFY-tQ==/109951162947883361.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="163music">
+                <span class="remd_lnum">2535万</span>
+              </div>
+              <p class="remd_text">麻麻，我想跟他们合唱！| 我想和你唱特辑</p>
+            </a>
+          </li>
+          <li class="remd_li">
+            <a href="javascript:;">
+              <div class="remd_logo">
+                <img class="u-img" src="http://p1.music.126.net/C4uGeK34zEF9Zf7vnFY-tQ==/109951162947883361.webp?imageView&thumbnail=246x0&quality=75&tostatic=0&type=webp" alt="163music">
                 <span class="remd_lnum">2535万</span>
               </div>
               <p class="remd_text">麻麻，我想跟他们合唱！| 我想和你唱特辑</p>
             </a>
           </li>
 
-          <li class="remd_li">
-            <a href="javascript:;">
-              <div class="remd_logo">
-                <img src="" alt="">
-                <span class="remd_lnum">2535万</span>
-              </div>
-              <p class="remd_text">麻麻，我想跟他们合唱！| 我想和你唱特辑</p>
-            </a>
-          </li>
-          <li class="remd_li">
-            <a href="javascript:;">
-              <div class="remd_logo">
-                <img src="" alt="">
-                <span class="remd_lnum">2535万</span>
-              </div>
-              <p class="remd_text">麻麻，我想跟他们合唱！| 我想和你唱特辑</p>
-            </a>
-          </li>
         </ul>
       </div>
     </div>
@@ -108,11 +126,24 @@ export default {
 
         flex: 1 1 33.333333%;
         width: 1%;
-        margin-right: torem(6px);
+        box-sizing: border-box;
+        padding-right: torem(6px);
         >a {
           display: block;
           .remd_logo {
+            position: relative;
+            padding-bottom: 100%;
+            .u-img {
+              position: absolute;
+              left: 0;
+              top: 0;
+              z-index: 1;
+            }
             .remd_lnum {
+              position: absolute;
+              right: torem(10px);
+              top: torem(4px);
+              z-index: 3;
               font-size: torem(24px);
               color: #fff;
             }
@@ -121,6 +152,9 @@ export default {
             color: #333;
             font-size: torem(26px);
           }
+        }
+        &:nth-of-type(3n) {
+          padding-right: 0;
         }
       }
     }
