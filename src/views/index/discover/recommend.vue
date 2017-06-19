@@ -121,13 +121,13 @@ export default {
     .remd_ul {
       display: flex;
       flex-wrap: wrap;
-      padding-bottom: torem(32px);
       .remd_li {
-
         flex: 1 1 33.333333%;
         width: 1%;
+        max-width: 33.333333%;
         box-sizing: border-box;
         padding-right: torem(6px);
+        padding-bottom: torem(32px);
         >a {
           display: block;
           .remd_logo {
@@ -151,6 +151,9 @@ export default {
           .remd_text {
             color: #333;
             font-size: torem(26px);
+            line-height: 1.2;
+            padding: 6px 2px 0 6px;
+            @include multiTextOverflow(2);
           }
         }
         &:nth-of-type(3n) {
