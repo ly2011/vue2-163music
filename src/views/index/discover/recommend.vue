@@ -79,6 +79,24 @@
 
         </ul>
       </div>
+      <h2 class="remd_title">最新音乐</h2>
+      <div class="songs_list">
+        <a href="javascript:;" class="songs_item">
+          <div class="songs_info">
+            <div class="remd_songs_title_wrap">
+              <span class="songs_title">等不到你</span>
+              <span class="songs_alias">(Yes or no)</span>
+            </div>
+            <div class="songs_desc">
+              <i class="hot"></i>
+              <span class="songs_artists">SNH48鞠婧祎</span>
+            </div>
+          </div>
+          <div class="player_img_wrap">
+            <i class="iconfont icon-zanting"></i>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -158,6 +176,41 @@ export default {
         }
         &:nth-of-type(3n) {
           padding-right: 0;
+        }
+      }
+    }
+  }
+  .songs_list {
+    position: relative;
+    min-height: torem(200px);
+    .songs_item {
+      display: flex;
+      padding-left: torem(20px);
+      .songs_info {
+        flex: 1;
+        width: 1%;
+        line-height: 1.5;
+        .remd_songs_title_wrap {
+          font-size: torem(34px);
+          @include ell;
+          .songs_alias {
+            color: #888;
+            padding-left: torem(8px);
+          }
+        }
+        .songs_desc {
+          color: #888;
+          font-size: torem(24px);
+          @include ell;
+        }
+
+      }
+      .player_img_wrap {
+        display: flex;
+        align-items: center;
+        padding: 0 torem(20px);
+        & i {
+          color: #999;
         }
       }
     }
