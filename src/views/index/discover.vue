@@ -59,7 +59,7 @@ $navbar-height: 80px;
     flex: 1;
     height: 100%;
     text-align: center;
-    & a {
+    a {
       position: relative;
       display: inline-block;
       font-size: torem(30px);
@@ -69,7 +69,7 @@ $navbar-height: 80px;
       box-sizing: border-box;
     }
     &.active {
-      & a {
+      a {
         &:after {
           content: "";
           position: absolute;

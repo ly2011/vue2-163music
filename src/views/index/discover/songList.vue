@@ -14,6 +14,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
+@import 'SRC/assets/scss/variables.scss';
+@import 'SRC/assets/scss/mixin.scss';
+.songList-container {
+    padding-top: torem(40px);
+}
 </style>
 

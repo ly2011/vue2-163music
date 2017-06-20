@@ -547,6 +547,19 @@ template {
 
 /*添加其他重置样式*/
 
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #333;
+    background-color: #fff
+}
+
 a,
 article,
 aside,
@@ -584,7 +597,7 @@ ul {
     text-decoration: none;
     border: none;
     color: #333;
-    font-family: Microsoft Yahei, sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased
 }
