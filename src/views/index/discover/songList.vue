@@ -31,14 +31,16 @@ export default {
 @import 'SRC/assets/scss/variables.scss';
 @import 'SRC/assets/scss/mixin.scss';
 .songList-container {
+  flex: 1;
+  flex-direction: column;
+  overflow-y: auto;
   .featured_songs {
     padding-top: torem(20px);
     position: relative;
     .blur-background {
       background-image: url(http://p1.music.126.net/Dvndq-PqlUvzRrhMg6aX4g==/18969874114219922.jpg);
       background-position: 50%;
-      -webkit-filter: blur(.6rem) brightness(.6);
-      filter: blur(.6rem) brightness(.6);
+      filter: blur(torem(120px)) brightness(.6);
       position: absolute;
       width: 100%;
       top: 0;
