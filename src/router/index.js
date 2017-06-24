@@ -11,7 +11,7 @@ import Discover from '../views/index/discover';
 Vue.use(Router);
 
 const router = new Router({
-  mode: 'history',
+  mode: 'hash',
   base: __dirname,
   routes: [
     {
@@ -30,8 +30,8 @@ const router = new Router({
           component: My
         },
         {
-          path: 'discover',
-          redirect: '/index/discover/songList'
+          path:'discover',
+          redirect:'/index/discover/songList'
         },
         {
           path: 'discover',
